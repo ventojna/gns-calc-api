@@ -1,7 +1,7 @@
 # gns-calc-api
-German net salray calucaltion REST API 
+German net salary calucaltion REST API 
 
-[Lohnsteuer from MarcelLehmann ](https://github.com/MarcelLehmann/Lohnsteuer) is used to calculate German salry taxes.
+[Lohnsteuer from MarcelLehmann ](https://github.com/MarcelLehmann/Lohnsteuer) is used to calculate German salary taxes.
 
 
 
