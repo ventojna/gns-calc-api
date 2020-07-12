@@ -13,7 +13,7 @@ To build the projekct you need to add Lohnsteuer.jar from MarcelLehmann to your 
     -Dfile=<path to the jar e.g. c:\tmp\lohnsteuer.jar> 
     -DgroupId=de.powerproject.lohnpap.pap 
     -DartifactId=lohnsteuer 
-    -Dversion=2019 
+    -Dversion=[year e.g. 2019] 
     -Dpackaging=jar 
     -DgeneratePom=true
 ```
