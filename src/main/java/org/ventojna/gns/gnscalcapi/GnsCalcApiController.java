@@ -13,11 +13,11 @@ public class GnsCalcApiController {
 
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/gnCalc")
+    @RequestMapping("/gnCalcTest")
     public Salary grossNet() {
         return new Salary(
                 1,
-                82000,
+                100000,
                 32,
                 1,
                 1.1,

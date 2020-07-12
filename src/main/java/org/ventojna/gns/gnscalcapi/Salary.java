@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class Salary {
 
 /*
-  Basic calculation 
+  Basic calculation
   Bruttolohn
   - MINUS Lohnsteuer (14 - 45 %)
   - MINUS Kirchensteuer (8 - 9 % des Lohnsteuerbetrags)
