@@ -4,12 +4,12 @@ import de.powerproject.lohnpap.pap.Lohnsteuer;
 import de.powerproject.lohnpap.pap.LohnsteuerInterface;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class Salary {
 
 /*
-  Gesamt-Brutto: Bruttolohn
+  Basic calculation 
+  Bruttolohn
   - MINUS Lohnsteuer (14 - 45 %)
   - MINUS Kirchensteuer (8 - 9 % des Lohnsteuerbetrags)
   - MINUS Solidaritätszuschlag (5,5 % des Lohnsteuerbetrags)
@@ -126,6 +126,7 @@ public class Salary {
             double religionTaxPercent,
             int annualTaxAllowance) {
 
+        //set constructor parameters
         this.id = id;
         this.grossSalaryPerYer = grossSalaryPerYer;
         this.age = age;
@@ -136,13 +137,16 @@ public class Salary {
         this.religionTaxPercent = religionTaxPercent;
         this.annualTaxAllowance = annualTaxAllowance;
 
+        //calculate taxes
         this.payrollTax = Lohnsteuer.getInstance();
-        this.calculcateTaxes();
+        this.calculateTaxes();
 
+        //set taxes
         this.incomeTax = this.payrollTax.getLstlzz().doubleValue() / 100;
         this.soliTax = this.payrollTax.getSolzlzz().doubleValue() / 100;
         this.churchTax = calcChurchTax();
 
+        //set social contributions
         SocialSecurityContributions socialSecContribution =
                 new SocialSecurityContributions(this.grossSalaryPerYer, this.healthInsuranceAddContribution / 100);
         this.socialSecurityContribution = socialSecContribution.getSocialInsuranceCompleteAmount();
@@ -151,6 +155,7 @@ public class Salary {
         this.unemploymentEnsurance = socialSecContribution.getUnemploymentInsuranceAmount();
         this.careEnsurance = socialSecContribution.getCareInsuranceAmount();
 
+        //calculate net salary
         this.netSalary =
                 this.grossSalaryPerYer
                         - this.incomeTax
@@ -166,7 +171,7 @@ public class Salary {
             return 0.0;
     }
 
-    public void calculcateTaxes() {
+    public void calculateTaxes() {
 
         //info:
         //https://github.com/MarcelLehmann/Lohnsteuer
