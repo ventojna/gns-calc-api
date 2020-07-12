@@ -10,7 +10,7 @@ To build the projekct you need to add Lohnsteuer.jar from MarcelLehmann to your 
 * Add the jar to your local repository:
 ```
   mvn install:install-file 
-    -Dfile=<path to the jar e.g. c:\tmp\lohnsteuer.jar> 
+    -Dfile=[path to the jar e.g. c:\tmp\lohnsteuer.jar]
     -DgroupId=de.powerproject.lohnpap.pap 
     -DartifactId=lohnsteuer 
     -Dversion=[year e.g. 2019] 
