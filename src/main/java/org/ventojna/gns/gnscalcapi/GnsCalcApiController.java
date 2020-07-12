@@ -44,6 +44,7 @@ public class GnsCalcApiController {
         ArrayList<Salary> salariesList = new ArrayList<>();
 
         for (int i = start; i <= end; i += interval) {
+
             salariesList.add(new Salary(
                     counter.incrementAndGet(),
                     i,
@@ -55,6 +56,9 @@ public class GnsCalcApiController {
                     religion,
                     annualTaxAllow)
             );
+
+            //in case of wicked input value, 1000 rounds should be enough
+            if (i>1000) break;
         }
 
         counter.set(0);
